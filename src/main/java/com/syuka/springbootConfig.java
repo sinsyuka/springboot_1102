@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.syuka.mapper")
+@MapperScan(basePackages = "com.syuka.mapper")
 @ComponentScan(basePackages = {"com.syuka.controller"})
 public class springbootConfig {
 }

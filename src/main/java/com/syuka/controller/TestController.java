@@ -41,7 +41,7 @@ public class TestController {
     }
 
     @RequestMapping("querydep")
-    public Object queryDepartment(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize){
+        public Object queryDepartment(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize){
 
         return new FormResult(true,departmentService.query(pageNum,pageSize));
 
