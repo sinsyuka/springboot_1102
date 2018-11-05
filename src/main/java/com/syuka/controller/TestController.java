@@ -8,10 +8,11 @@ import com.syuka.service.DepartmentService;
 import com.syuka.service.HrService;
 import com.syuka.test01.mapper.User1Mapper;
 import com.syuka.test02.mapper.User2Mapper;
+import com.syuka.utils.LogAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
+@LogAnnotation(value = "log打印")
 @RestController
 public class TestController {
 
@@ -52,6 +53,11 @@ public class TestController {
         user.setUsername(username);
         user.setPassword(password);
         return user1Mapper.addUser(username,password);
+    }
+
+    @RequestMapping("/log")
+    public Object logAnnotation(@RequestParam("name")String name) {
+        return name;
     }
     @RequestMapping("insertTest2")
     public Object insertUser2(String username ,String password){
